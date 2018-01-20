@@ -1,0 +1,3 @@
+1. Creature record is defined in CreaturesLib, using string references to image files, and a mesh object.
+2. Creature is added to the list of creatures active in the current scene. During this process (which occurs in IO) the image file names are replaced somehow with TextureData objects, which are returned by uploading the images to the GPU. This is the point where the checkerboard pattern for missing images is uploaded.
+3. When the creature is to be animated, its state is queried and the appropriate TextureData is returned, and the texture is updated on its object using updateObjectUniforms.
